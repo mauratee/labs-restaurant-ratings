@@ -4,10 +4,13 @@
 # put your code here
 # read a file
 open_file = open("scores.txt")
+new_name = input("Please enter a restaurant name: ")
+new_rating = input("Please enter a restaurant rating: ")
+
 # read lines of file
 def ordered_ratings(open_file):
     ratings = {}
-    ratings_list = []
+ #   ratings_list = []
     # ratings_list = ratings_list.sort()
 
 # break each line into parts, whitestrip, maybe split by colon?
@@ -15,11 +18,15 @@ def ordered_ratings(open_file):
         line = line.rstrip()
         words = line.split(":")
         ratings[words[0]] = words[1]
-        ratings_list.append(f"{words[0]} is rated at {words[1]}.")
+        # ratings_list.append(f"{words[0]} is rated at {words[1]}.")
     
     #ratings_list = ratings_list.sort()
+
+    ratings[new_name] = new_rating
     sorted_ratings_list = sorted(ratings.items())
 
+
+    
     for restaurant in sorted_ratings_list:
         print(f"{restaurant[0]} is rated at {restaurant[1]}.")
     #for rate in ratings_list:
